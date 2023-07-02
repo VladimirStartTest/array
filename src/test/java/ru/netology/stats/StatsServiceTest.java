@@ -9,7 +9,7 @@ class StatsServiceTest {
 
     @Test
 
-    public void testSum(){
+    public void testSum() {
         StatsService service = new StatsService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         long actual = service.sum(sales);
@@ -36,7 +36,6 @@ class StatsServiceTest {
     }
 
 
-
     @Test
 
     public void testMonthMaximum() {
@@ -49,7 +48,6 @@ class StatsServiceTest {
 
         Assertions.assertEquals(expected, actual);
     }
-
 
 
     @Test
