@@ -1,65 +1,53 @@
 package ru.netology.stats;
 
 public class StatsService {
-    public long sum(long[] sales){
+    public long sum(long[] sales) {
         long totalSale = 0;
-        for (long sale : sales){
+        for (long sale : sales) {
             totalSale += sale;
         }
-return totalSale;
+        return totalSale;
     }
 
-    public long average(long[] sales){
-
-        long totalSale = sum(sales);
+    public long average(long[] sales) {
         return sum(sales) / 12;
     }
 
-
-    public int monthMaximum(long[] sales){
+    public int monthMaximum(long[] sales) {
         int monthResult = 0;
         for (int i = 0; i < sales.length; i++) {
-
-            if (sales[i] >= sales[monthResult]){
+            if (sales[i] >= sales[monthResult]) {
                 monthResult = i;
             }
         }
         return monthResult + 1;
     }
 
-
-    public int monthMinimum(long[] sales){
+    public int monthMinimum(long[] sales) {
         int monthResultMin = 0;
         for (int i = 0; i < sales.length; i++) {
-
-            if (sales[i] <= sales[monthResultMin]){
+            if (sales[i] <= sales[monthResultMin]) {
                 monthResultMin = i;
             }
         }
         return monthResultMin + 1;
     }
 
-public int monthBelowAverage(long[] sales){
-
+    public int monthBelowAverage(long[] sales) {
         int counter = 0;
-        for (long sale : sales){
-
-if (sale < average(sales)){
-    counter ++;
-
-           }
+        for (long sale : sales) {
+            if (sale < average(sales)) {
+                counter++;
+            }
         }
         return counter;
-     }
+    }
 
-    public int monthHigherAverage(long[] sales){
-
+    public int monthHigherAverage(long[] sales) {
         int counter = 0;
-        for (long sale : sales){
-
-            if (sale > average(sales)){
-                counter ++;
-
+        for (long sale : sales) {
+            if (sale > average(sales)) {
+                counter++;
             }
         }
         return counter;
